@@ -3,9 +3,11 @@
 import sys
 import os
 
+
 def ReadQueue():
 	text=sys.stdin.readline().strip()
 	return text
+
 
 def menuSelect(menuOption):
 	if menuOption == 'a':
@@ -17,14 +19,18 @@ def menuSelect(menuOption):
 	else: OptionResults=''
 	return OptionResults
 
+
 def GetMemoryStatus():
 	return os.popen('free').read().split('\n')
+
 
 def GetDirectoryContents():
 	return os.popen('ls -la').read().split('\n')
 
+
 def GetSystemVersion():
 	return [sys.version,]
+
 
 def main():
 
@@ -33,7 +39,7 @@ def main():
 		Selection=ReadQueue()
 		if Selection == 'x': break
 		else: Results=menuSelect(Selection)
-		if Results=='': 
+		if Results == '':
 			print('Invalid Selection, Choose Again')
 			continue
 		else:
